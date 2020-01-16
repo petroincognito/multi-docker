@@ -1,0 +1,35 @@
+{
+ "AWSEBDockerrunVesion": 2,
+ "containerDefinitions": [
+   {
+     "name": "client",
+     "image": "tmytlovych/multi-client",
+     "hostname": "client",
+     "essential": false  
+   },
+   {
+     "name": "server",
+     "image": "tmytlovych/multi-server",
+     "hostname": "api",
+     "essential": false  
+   },
+   {
+     "name": "worker",
+     "image": "tmytlovych/multi-worker",
+     "hostname": "worker",
+     "essential": false  
+   },
+   {
+     "name": "ngnix",
+     "image": "tmytlovych/multi-ngnix",
+     "essential": true,
+     "portMappings": [
+       {
+          "hostPort": 80,
+          "containerPort": 80
+       }
+     ],
+     "links": ["client", "server"]
+   }
+ ]
+}

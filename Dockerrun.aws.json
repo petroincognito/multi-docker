@@ -24,7 +24,7 @@
    },
    {
      "name": "ngnix",
-     "image": "tmytlovych/multi-ngnix",
+     "image": "tmytlovych/multi-nginx",
      "essential": true,
      "memory": 128,
      "portMappings": [
